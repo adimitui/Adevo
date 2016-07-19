@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Adevo | Your Native Advertising Platform</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+
+	<link href='https://fonts.googleapis.com/css?family=News+Cycle|Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-app="adevoApp">
+	<div class="header" ng-controller="HeaderCtrl">
+		<div class="container">
+			<div class="header-logo">
+				<a href="#/">
+					<h2>Adevo</h2>
+				</a>
+			</div>
+
+			<div class="header-buttons">
+				<form ng-submit="submitSearch()">
+					<input type="text" ng-model="searchValue" placeholder="Search Library"/>
+					<button class="search-button">
+						<span class="glyphicon glyphicon-search glyphicon-search-color" aria-hidden="true"></span>
+					</button>
+				</form>
+
+				<button ng-click="goToUpload()" class="header-button">
+					<img src="http://i346.photobucket.com/albums/p438/adimitui/Upload%20White_zpsfrxcgonr.png"/>
+				</button>
+				<div class="hamburger-dropdown">
+					<button id="hamburger-button" class="header-button" ng-click="showMenu()">
+						<img class="hamburger" src="http://i346.photobucket.com/albums/p438/adimitui/Hamburger%20White_zpsnswuuzcr.png"/>
+					</button>
+					<div class="positioner">
+						<div id="hamburger-dropdown-content-signed-out" class="hamburger-dropdown-content">
+							<a ng-click="hideDropdown()" href="#/about">About Us</a>
+							<a ng-click="hideDropdown()" href="#/browse">Browse Library</a>
+							<a ng-click="hideDropdown()" href="#/contact">Contact Us</a>
+							<a ng-click="hideDropdown()" href="#/terms">Terms &amp; Conditions</a>
+							<a ng-click="hideDropdown()" href="#/signup">Sign Up / Log In</a>
+						</div>
+						<div id="hamburger-dropdown-content-signed-in" class="hamburger-dropdown-content">
+							<a ng-click="goToProfile">Profile</a>
+							<a ng-click="hideDropdown()" href="#/about">About Us</a>
+							<a ng-click="hideDropdown()" href="#/browse">Browse Library</a>
+							<a ng-click="hideDropdown()" href="#/contact">Contact Us</a>
+							<a ng-click="hideDropdown()" href="#/terms">Terms &amp; Conditions</a>
+							<a ng-click="signOut(); hideDropdown()">Sign Out</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="viewbox" ng-view></div>
+
+	<div class="footer">
+		<div class="container">
+			<div class="footer-left">
+				<h5>&copy; Adevo</h5>
+			</div>
+
+			<div class="footer-right">
+				<ul>
+					<li><a href="#/about">About</a> | </li>
+					<li><a href="#/contact">Contact Us</a> | </li>
+					<li><a href="#/terms">Terms &amp; Conditions</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script src="angular.js"></script>
+	<script src="angular-route.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+	<script>
+  		// Initialize Firebase
+  		var config = {
+		  	apiKey: "AIzaSyCcBHmotJTqsRkZnqw0NoJmnG3gjjcbibk",
+		  	authDomain: "adevo-a25fc.firebaseapp.com",
+		  	databaseURL: "https://adevo-a25fc.firebaseio.com",
+		  	storageBucket: "adevo-a25fc.appspot.com",
+		};
+  		firebase.initializeApp(config);
+
+  		// Get a reference to the storage service, which is used to create references in your storage bucket
+  		var storage = firebase.storage();
+	</script>
+
+	<!-- <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+	<input type="filepicker" data-fp-apikey="AmuvG01JIQn6ipHG0tOP3z" onchange="alert(event.fpfile.url)"> -->
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.4.7.min.js"></script>
+
+	<script src="script.js"></script>
+</body>
+</html>

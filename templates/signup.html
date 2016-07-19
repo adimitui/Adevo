@@ -1,0 +1,54 @@
+<div class="signup-section">
+	<div class="container">
+		<h1>Join the network of Adevo users today!</h1>
+
+		<div class="col-md-6 clearfix">
+			<div class="float-right">
+				<div class="signup-box">
+					<form ng-submit="signUp()">
+						<h2>Sign Up</h2>
+						<label>Username</label>
+						<input type="text" ng-model="newUsername" placeholder="john.doe"/>
+						<label>First Name</label>
+						<input type="text" ng-model="newFirstName" placeholder="John"/>
+						<label>Last Name</label>
+						<input type="text" ng-model="newLastName" placeholder="Doe"/>
+						<label>Company Name</label>
+						<input type="text" ng-model="newCompanyName" placeholder="Adevo"/>
+						<label>Email Address</label>
+						<input type="email" ng-model="newEmail" placeholder="johndoe@adevo.com"/>
+						<label>Account Type</label>
+						<select id="account-type">
+							<option>Advertiser</option>
+							<option>Developer</option>
+						</select>
+						<label>Password</label>
+						<input type="password" ng-model="newPassword" placeholder="Password"/>
+						<label>Confirm Password</label>
+						<input type="password" ng-model="newConfirmPassword" placeholder="Password"/>
+						<div class="left">
+							<input type="checkbox"/>
+						</div>
+						<label class="checkbox-label">By clicking on the checkbox above, I indicate that I have read and agree with Adevo's <a href="#/terms">Terms &amp; Conditions</a></label>
+						<button type="submit">Sign Up</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6 clearfix">
+			<div class="float-left">
+				<div class="login-box">
+					<form ng-submit="logIn()">
+						<h2>Log In</h2>
+						<label>Email</label>
+						<input type="text" ng-model="loginEmail" placeholder="janedoe@adevo.com"/>
+						<label>Password</label>
+						<input type="password" ng-model="loginPassword" placeholder="Password"/>
+						<button type="submit">Log In</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

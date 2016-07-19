@@ -1,0 +1,20 @@
+<div class="upload-section">
+	<div class="container">
+		<h1>Create an Advertisement Campaign</h1>
+		<form ng-submit="createCampaign()">
+			<h5><strong>Campaign Name</strong></h5>
+			<h6>What is the name you will be using to identify your ad campaign?</h6>
+			<input ng-model="newCampaignName" type="text"/>
+			<h5><strong>Advertisement Description</strong></h5>
+			<h6>Describe the product you are promoting and the goals of the your ad campaign.</h6>
+			<textarea ng-model="newCampaignDescription"></textarea>
+			<h5><strong>Tags</strong></h5>
+			<h6>List some keywords that describe your product.</h6>
+			<input ng-model="newCampaignTags"/>
+			<h5><strong>File Upload</strong></h5>
+			<h6>Upload your image file. For optimal use, upload a high-definition file with a transparent background that is below 10MB.</h6>
+			<input id="file-selector" type="file" file/>
+			<button type="submit">Create Campaign</button>
+		</form>
+	</div>
+</div>
