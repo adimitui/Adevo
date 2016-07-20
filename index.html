@@ -42,7 +42,7 @@
 							<a ng-click="hideDropdown()" href="#/signup">Sign Up / Log In</a>
 						</div>
 						<div id="hamburger-dropdown-content-signed-in" class="hamburger-dropdown-content">
-							<a ng-click="goToProfile">Profile</a>
+							<a ng-click="hideDropdown()" href="#/profile">Profile</a>
 							<a ng-click="hideDropdown()" href="#/about">About Us</a>
 							<a ng-click="hideDropdown()" href="#/browse">Browse Library</a>
 							<a ng-click="hideDropdown()" href="#/contact">Contact Us</a>
@@ -91,10 +91,6 @@
   		// Get a reference to the storage service, which is used to create references in your storage bucket
   		var storage = firebase.storage();
 	</script>
-
-	<!-- <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
-	<input type="filepicker" data-fp-apikey="AmuvG01JIQn6ipHG0tOP3z" onchange="alert(event.fpfile.url)"> -->
-	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.4.7.min.js"></script>
 
 	<script src="script.js"></script>
 </body>

@@ -40,6 +40,25 @@ body {
 	float: left;
 }
 
+.section-container {
+	width: 1000px;
+	margin: 0px auto;
+}
+
+.background {
+	background: url("http://i346.photobucket.com/albums/p438/adimitui/Gray%20Background_zpsrcrfh4ri.png");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+.vibrant-background {
+	background: url("http://i346.photobucket.com/albums/p438/adimitui/Blue%20Background_zpseh274zpo.jpg");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
 /* Clearfix */
 .clearfix:after {
 	visibility: hidden;
@@ -223,6 +242,7 @@ div.header button.header-button img.hamburger {
 /* Footer */
 div.footer {
 	background-color: #FFF;
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.8);
 }
 
 div.footer-left {
@@ -267,12 +287,12 @@ div.segment-jumbotron {
 	-o-background-size: cover;
 	margin-top: 70px;
 	background-size: cover;
-	padding-top: 38px;
+	padding-top: 66px;
 	z-index: -100;
 }
 
 div.segment-jumbotron img {
-	width: 310px;
+	width: 330px;
 	height: auto;
 }
 
@@ -374,11 +394,11 @@ div.advertiser-box {
 }
 
 div.advertiser-box h1, div.developer-box h1 {
-	padding-top: 63px;
+	padding-top: 55px;
 }
 
 div.advertiser-box h2, div.developer-box h2 {
-	padding-bottom: 63px;
+	padding-bottom: 55px;
 }
 
 div.advertiser-box:active {
@@ -502,6 +522,221 @@ div.upload-section input, div.upload-section textarea {
 
 div.upload-section textarea {
 	height: 150px;
+}
+
+/* Profile Redirect */
+div.profile-redirect-section {
+	transform: translate(0,70px);
+	background: url("http://i346.photobucket.com/albums/p438/adimitui/Gray%20Background_zpsrcrfh4ri.png");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	z-index: -100;
+	padding-top: 30px;
+	padding-bottom: 465px;
+	margin-bottom: 70px;
+}
+
+div.profile-redirect-section p {
+	color: #FFF;
+}
+
+/* Advertiser Profile */
+div.advertiser-profile-section {
+	margin-top: 70px;
+	padding-bottom: 0;
+}
+
+div.advertiser-profile-section div.advertiser-box {
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+}
+
+div.advertiser-profile-section div.advertiser-cover {
+	width: 100%;
+	background-color: #FFF;
+	padding-bottom: 1px solid #D6D6D6;
+}
+
+div.advertiser-profile-section div.advertiser-cover-photo {
+	background: url("https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/13442235_1715603191990352_6254506269756204983_n.png?oh=29678ef77882dacd3e27845f4c1c3bf0&oe=582E95E8&__gda__=1479485368_a706da62d67f28877cf28280bee766ad") center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	width: 100%;
+	height: 300px;
+}
+
+div.advertiser-profile-section div.advertiser-profile-picture {
+	background: url("https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/10299960_1558651074352232_2478360997668681311_n.jpg?oh=eec14bffe6dcbd13dd9c1783b1f9a475&oe=5831CF7F") center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	width: 200px;
+	height: 200px;
+	border: 1px solid #D6D6D6;
+	box-shadow: 2px 1px 1px rgba(0,0,0,0.5);
+	position: relative;
+	transform: translate(0,-130px);
+	margin-bottom: -130px;
+}
+
+div.advertiser-profile-section div.strip {
+	background-color: #D6D6D6;
+	width: 100%;
+	height: 80px;
+	margin-bottom: -50px;
+}
+
+div.advertiser-profile-section div.section-container.cover {
+	padding-bottom: 200px;
+}
+
+div.advertiser-profile-section div.advertiser-cover h3, div.developer-profile-section div.developer-cover h3 {
+	font-size: 20px;
+}
+
+div.advertiser-profile-section div.advertiser-campaign {
+	background-color: #FFF;
+	width: 100%;
+	border-top: 1px solid #D6D6D6;
+	padding-bottom: 30px;
+}
+
+div.advertiser-profile-section div.section-container {
+	padding-bottom: 250px;
+}
+
+div.advertiser-profile-section div.advertiser-campaign-left {
+	width: 58%;
+	margin-right: 2%;
+	float: left;
+	padding-top: 20px;
+}
+
+div.advertiser-profile-section div.advertiser-campaign-right {
+	width: 40%;
+	float: left;
+	padding-top: 40px;
+}
+
+div.advertiser-profile-section div.advertiser-campaign-full {
+	width: 100%;
+	float: left;
+}
+
+div.advertiser-profile-section div.advertiser-campaign h1 {
+	font-family: "News Cycle";
+	padding: 0;
+}
+
+div.profile-thumbnail {
+	width: 100px;
+	height: 100px;
+	border: 1px solid #D6D6D6;
+}
+
+div.profile-thumbnail > img {
+	width: 100%;
+	height: 100%;
+}
+
+div.advertiser-profile-section div.advertiser-campaign button {
+}
+
+/* Developer Profile */
+div.developer-profile-section {
+	margin-top: 70px;
+	padding-bottom: 0;
+}
+
+div.developer-profile-section div.developer-box {
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+}
+
+div.developer-profile-section div.developer-cover {
+	width: 100%;
+	background-color: #FFF;
+	padding-bottom: 1px solid #D6D6D6;
+}
+
+div.developer-profile-section div.developer-cover-photo {
+	background: url("http://i346.photobucket.com/albums/p438/adimitui/Adelle%20Cover%20001_zpsre5f5atq.jpg") center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	width: 100%;
+	height: 300px;
+}
+
+div.developer-profile-section div.developer-profile-picture {
+	background: url("https://avatars0.githubusercontent.com/u/19665962?v=3&s=460") center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	width: 200px;
+	height: 200px;
+	border: 1px solid #D6D6D6;
+	box-shadow: 2px 1px 1px rgba(0,0,0,0.5);
+	position: relative;
+	transform: translate(0,-130px);
+	margin-bottom: -130px;
+}
+
+div.developer-profile-section div.strip {
+	background-color: #D6D6D6;
+	width: 100%;
+	height: 80px;
+	margin-bottom: -50px;
+}
+
+div.developer-profile-section div.section-container.cover {
+	padding-bottom: 200px;
+}
+
+div.developer-profile-section div.developer-application {
+	background-color: #FFF;
+	width: 100%;
+	border-top: 1px solid #D6D6D6;
+	padding-bottom: 30px;
+}
+
+div.developer-profile-section div.section-container {
+	padding-bottom: 250px;
+}
+
+div.developer-profile-section div.developer-application-left {
+	width: 58%;
+	margin-right: 2%;
+	float: left;
+	padding-top: 20px;
+}
+
+div.developer-profile-section div.developer-application-right {
+	width: 40%;
+	float: left;
+	padding-top: 40px;
+}
+
+div.developer-profile-section div.developer-application-full {
+	width: 100%;
+	float: left;
+}
+
+div.developer-profile-section div.developer-application h1 {
+	font-family: "News Cycle";
+	padding: 0;
+}
+
+div.profile-thumbnail {
+	width: 100px;
+	height: 100px;
+	border: 1px solid #D6D6D6;
+}
+
+div.profile-thumbnail > img {
+	width: 100%;
+	height: 100%;
 }
 
 /* Mobile Optimization */

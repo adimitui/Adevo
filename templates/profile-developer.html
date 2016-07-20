@@ -1,0 +1,46 @@
+<div class="developer-profile-section background">
+	<div class="container">
+		<div class="developer-box">
+			<div class="developer-cover">
+				<div id="cover-photo-div" class="developer-cover-photo">
+				</div>
+				<div class="strip">
+				</div>
+				<div class="section-container cover">
+					<div class="developer-profile-picture">
+					</div>
+					<div class="col-md-5">
+						<h3><strong>Company/Organization:</strong> {{ companyName }}</h3>
+						<h3><strong>Developer Name:</strong> {{ fullName }}</h3>
+						<h3><strong>Websites:</strong> {{ companyWebsite }}</h3>
+						<h3><strong>Contact Information:</strong> {{ contactInformation }}</h3>
+					</div>
+					<div class="col-md-7">
+						<h3><strong>Personal Biography</strong></h3>
+						<p>{{ biographyInformation }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="developer-application" ng-repeat="application in applications">
+			<div class="section-container">
+				<div class="developer-application-left">
+					<h1>{{ application.application_name }}</h1>
+					<h4><strong>Application Description</strong></h4>
+					<p>{{ application.application_description }}</p>
+					<h4><strong>Application Metrics</strong></h4>
+					<p>Feature currently under construction.</p>
+				</div>
+				<div class="developer-application-right">
+					<div class="profile-thumbnail">
+						<img src="{{ application.application_image }}"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="strip">
+		</div>
+	</div>
+</div>
