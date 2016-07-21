@@ -1,7 +1,7 @@
-<div class="developer-profile-section background">
+<div class="profile-section background">
 	<div class="container">
-		<div class="developer-box">
-			<div class="developer-cover">
+		<div class="profile-box">
+			<div class="profile-cover">
 				<div id="cover-photo-div" class="developer-cover-photo">
 				</div>
 				<div class="strip">
@@ -23,16 +23,16 @@
 			</div>
 		</div>
 
-		<div class="developer-application" ng-repeat="application in applications">
+		<div class="profile-list" ng-repeat="application in applications">
 			<div class="section-container">
-				<div class="developer-application-left">
+				<div class="profile-list-left">
 					<h1>{{ application.application_name }}</h1>
 					<h4><strong>Application Description</strong></h4>
 					<p>{{ application.application_description }}</p>
 					<h4><strong>Application Metrics</strong></h4>
 					<p>Feature currently under construction.</p>
 				</div>
-				<div class="developer-application-right">
+				<div class="profile-list-right">
 					<div class="profile-thumbnail">
 						<img src="{{ application.application_image }}"/>
 					</div>

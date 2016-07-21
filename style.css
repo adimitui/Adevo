@@ -199,6 +199,17 @@ div.header button.header-button img.hamburger {
 	display: none;
 }
 
+div.header .glyphicon-comment-color {
+	color: #FFF;
+	font-size: 20px;
+}
+
+div.header button.header-button img.message {
+	width: auto;
+	height: 25px;
+	text-align: center;
+}
+
 /* Hamburger Dropdown */
 #hamburger-button:active {
 	background-color: #D6D6D6;
@@ -525,7 +536,7 @@ div.upload-section textarea {
 }
 
 /* Profile Redirect */
-div.profile-redirect-section {
+div.redirect-section {
 	transform: translate(0,70px);
 	background: url("http://i346.photobucket.com/albums/p438/adimitui/Gray%20Background_zpsrcrfh4ri.png");
 	-webkit-background-size: cover;
@@ -538,27 +549,27 @@ div.profile-redirect-section {
 	margin-bottom: 70px;
 }
 
-div.profile-redirect-section p {
+div.redirect-section p {
 	color: #FFF;
 }
 
 /* Advertiser Profile */
-div.advertiser-profile-section {
+div.profile-section {
 	margin-top: 70px;
 	padding-bottom: 0;
 }
 
-div.advertiser-profile-section div.advertiser-box {
+div.profile-box {
 	box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
 }
 
-div.advertiser-profile-section div.advertiser-cover {
+div.profile-section div.profile-cover {
 	width: 100%;
 	background-color: #FFF;
 	padding-bottom: 1px solid #D6D6D6;
 }
 
-div.advertiser-profile-section div.advertiser-cover-photo {
+div.profile-section div.profile-cover-photo {
 	background: url("https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/13442235_1715603191990352_6254506269756204983_n.png?oh=29678ef77882dacd3e27845f4c1c3bf0&oe=582E95E8&__gda__=1479485368_a706da62d67f28877cf28280bee766ad") center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -567,7 +578,7 @@ div.advertiser-profile-section div.advertiser-cover-photo {
 	height: 300px;
 }
 
-div.advertiser-profile-section div.advertiser-profile-picture {
+div.profile-section div.profile-picture {
 	background: url("https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/10299960_1558651074352232_2478360997668681311_n.jpg?oh=eec14bffe6dcbd13dd9c1783b1f9a475&oe=5831CF7F") center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -581,51 +592,51 @@ div.advertiser-profile-section div.advertiser-profile-picture {
 	margin-bottom: -130px;
 }
 
-div.advertiser-profile-section div.strip {
+div.profile-section div.strip {
 	background-color: #D6D6D6;
 	width: 100%;
 	height: 80px;
 	margin-bottom: -50px;
 }
 
-div.advertiser-profile-section div.section-container.cover {
+div.profile-section div.section-container.cover {
 	padding-bottom: 200px;
 }
 
-div.advertiser-profile-section div.advertiser-cover h3, div.developer-profile-section div.developer-cover h3 {
+div.profile-section div.profile-cover h3, div.profile-section div.profile-cover h3 {
 	font-size: 20px;
 }
 
-div.advertiser-profile-section div.advertiser-campaign {
+div.profile-section div.profile-list {
 	background-color: #FFF;
 	width: 100%;
 	border-top: 1px solid #D6D6D6;
 	padding-bottom: 30px;
 }
 
-div.advertiser-profile-section div.section-container {
+div.profile-section div.section-container {
 	padding-bottom: 250px;
 }
 
-div.advertiser-profile-section div.advertiser-campaign-left {
+div.profile-section div.profile-list-left {
 	width: 58%;
 	margin-right: 2%;
 	float: left;
 	padding-top: 20px;
 }
 
-div.advertiser-profile-section div.advertiser-campaign-right {
+div.profile-section div.profile-list-right {
 	width: 40%;
 	float: left;
 	padding-top: 40px;
 }
 
-div.advertiser-profile-section div.advertiser-campaign-full {
+div.profile-section div.profile-list-full {
 	width: 100%;
 	float: left;
 }
 
-div.advertiser-profile-section div.advertiser-campaign h1 {
+div.profile-profile-section div.profile-list h1 {
 	font-family: "News Cycle";
 	padding: 0;
 }
@@ -641,39 +652,25 @@ div.profile-thumbnail > img {
 	height: 100%;
 }
 
-div.advertiser-profile-section div.advertiser-campaign button {
+div.profile-section div.profile-campaign button {
 }
 
-/* Developer Profile */
-div.developer-profile-section {
-	margin-top: 70px;
-	padding-bottom: 0;
-}
-
-div.developer-profile-section div.developer-box {
-	box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
-}
-
-div.developer-profile-section div.developer-cover {
-	width: 100%;
-	background-color: #FFF;
-	padding-bottom: 1px solid #D6D6D6;
-}
-
-div.developer-profile-section div.developer-cover-photo {
+div.profile-section div.developer-cover-photo {
 	background: url("http://i346.photobucket.com/albums/p438/adimitui/Adelle%20Cover%20001_zpsre5f5atq.jpg") center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
+	background-size: cover;
 	width: 100%;
 	height: 300px;
 }
 
-div.developer-profile-section div.developer-profile-picture {
+div.profile-section div.developer-profile-picture {
 	background: url("https://avatars0.githubusercontent.com/u/19665962?v=3&s=460") center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
+	background-size: cover;
 	width: 200px;
 	height: 200px;
 	border: 1px solid #D6D6D6;
@@ -683,60 +680,299 @@ div.developer-profile-section div.developer-profile-picture {
 	margin-bottom: -130px;
 }
 
-div.developer-profile-section div.strip {
-	background-color: #D6D6D6;
-	width: 100%;
-	height: 80px;
-	margin-bottom: -50px;
+/* Browse Advertisements */
+div.browse-section {
+	margin-top: 70px;
+	background-color: #4D4D4D;
 }
 
-div.developer-profile-section div.section-container.cover {
-	padding-bottom: 200px;
+/* Draft Proposal */
+div.lightbox {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.8);
+	position: fixed;
+	text-align: center;
 }
 
-div.developer-profile-section div.developer-application {
+div.proposal-box {
+	position: absolute;
 	background-color: #FFF;
-	width: 100%;
-	border-top: 1px solid #D6D6D6;
-	padding-bottom: 30px;
+	position: fixed;
+	width: 800px;
+	display: inline-block;
+	margin-top: 100px;
+	transform: translate(-50%,0);
+	box-shadow: 2px 1px 1px rgba(0,0,0,0.5);
+	max-height: calc(100vh - 130px);
+	overflow-y: auto;
+	padding-bottom: 70px;
 }
 
-div.developer-profile-section div.section-container {
-	padding-bottom: 250px;
+div.proposal-box-container {
+	width: 97%;
+	margin: 0px auto;
 }
 
-div.developer-profile-section div.developer-application-left {
-	width: 58%;
-	margin-right: 2%;
-	float: left;
-	padding-top: 20px;
+div.proposal-box div.proposal-box-strip {
+	background-color: #429DE8;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 
-div.developer-profile-section div.developer-application-right {
-	width: 40%;
-	float: left;
-	padding-top: 40px;
+div.proposal-box div.one-half {
+	width: 50%;
 }
 
-div.developer-profile-section div.developer-application-full {
-	width: 100%;
-	float: left;
+div.proposal-box div.one-half .glyphicon-remove-color {
+	text-align: right;
+	font-size: 25px;
+	color: #FFF;
+	float: right;
+	transform: translate(0,5px);
 }
 
-div.developer-profile-section div.developer-application h1 {
+div.proposal-box div.proposal-box-strip h4 {
+	text-align: left;
+	color: #FFF;
 	font-family: "News Cycle";
-	padding: 0;
 }
 
-div.profile-thumbnail {
-	width: 100px;
+div.proposal-box form > h4:first-child {
+	margin-top: 70px;
+	margin-left: 50px;
+}
+
+div.proposal-box div.proposal-box-file-selector {
+	width: 90%;
+	border: 3px dashed #429DE8;
+	border-radius: 20px;
+	margin: 0px auto;
+	margin-bottom: 20px;
+}
+
+div.proposal-box div.proposal-box-file-selector label {
+	display: inline-block;
+	color: #429DE8;
+	position: relative;
+	transform: translate(0,-15px);
+	font-size: 25px;
+}
+
+div.proposal-box div.proposal-box-file-selector input#getFile {
+	display: none;
+}
+
+.glyphicon-file-color {
+	color: #429DE8;
+	display: inline-block;
+	font-size: 50px;
+	margin-left: 20px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+div.proposal-box div.proposal-box-file-selector:active {
+	background-color: #429DE8;
+	transition: all 0.3s ease;
+}
+
+div.proposal-box div.proposal-box-file-selector:active label, div.proposal-box div.proposal-box-file-selector:active .glyphicon-file-color {
+	color: #FFF;
+	transition: all 0.3s ease;
+}
+
+div.proposal-box h2 {
+	margin-top: -10px;
+	position: relative;
+	transform: translate(0,0);
+	margin-bottom: 30px;
+	color: #429DE8;
+}
+
+div.proposal-box input {
+	width: 100%;
+}
+
+div.proposal-box textarea {
+	width: 100%;
 	height: 100px;
-	border: 1px solid #D6D6D6;
 }
 
-div.profile-thumbnail > img {
+div.proposal-box button {
+	text-align: center;
+	display: inline-block;
+	padding: 8px 40px 14px 40px;
+	margin-top: 20px;
+	margin-left: 30px;
+	margin-right: 20px;
+}
+
+div.proposal-box div.proposal-box-strip-bottom {
+	position: absolute;
+	background-color: #429DE8;
+	width: 100%;
+	height: 30px;
+	padding-bottom: 10px;
+	margin-top: 40px;
+	position
+}
+
+div.proposal-box div.proposal-box-strip-bottom h5 {
+	color: #FFF;
+	text-align: left;
+	font-family: "News Cycle";
+	position: relative;
+	transform: translate(0,-5px);
+}
+
+/* Proposal Page */
+div.proposal-section {
+	margin-top: 70px;
+}
+
+div.proposal-section div.proposal-whole {
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+	background-color: #FFF;
+}
+
+div.proposal-section div.proposal-container {
+	width: 1000px;
+}
+
+div.proposal-section div.proposal-header {
+	width: 100%;
+	background-color: #429DE8;
+	text-align: center;
+	font-family: "News Cycle";
+	color: #FFF;
+	padding-top: 1px;
+	padding-bottom: 7px;
+}
+
+div.proposal-section div.proposal-list {
+	width: 100%;
+	color: #FFF;
+	border-bottom: 1px solid #D6D6D6;
+}
+
+div.proposal-section div.proposal-list-container {
+	width: 97%;
+	margin: 0px auto;
+	margin-top: 20px;
+}
+
+div.proposal-thumbnail {
+	width: 150px;
+	height: 150px;
+	border: 1px solid #D6D6D6;
+	float: left;
+}
+
+div.proposal-thumbnail img {
 	width: 100%;
 	height: 100%;
+}
+
+div.proposal-section div.proposal-info {
+	width: 30%;
+	float: left;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+div.proposal-section div.proposal-list-container h2 {
+	color: #4D4D4D;
+	margin-bottom: -10px;
+}
+
+div.proposal-section div.proposal-list-container h3 {
+	color: #4D4D4D;
+	margin-bottom: -10px;
+}
+
+div.proposal-section div.proposal-detail {
+	width: 56%;
+	float: left;
+}
+
+div.proposal-detail div.detail-button {
+	display: inline-block;
+	width: 120px;
+	text-align: center;
+	background-color: #4D4D4D;
+}
+
+div.proposal-detail div.detail-button h4 {
+	color: #FFF;
+}
+
+div.proposal-detail div.detail-button:hover {
+	background-color: #429DE8;
+}
+
+div.proposal-detail div.detail-button.active {
+	background-color: #429DE8;
+}
+
+div.proposal-section div.detail-box {
+	width: 100%;
+	color: #FFF;
+	border: 1px solid #D6D6D6;
+	background-color: #F2F2F2;
+	height: 180px;
+	padding: 10px;
+}
+
+div.proposal-detail p {
+	color: #4D4D4D;
+}
+
+div.proposal-detail div.proposal-status {
+	width: 40%;
+	float: left;
+}
+
+div.proposal-section div.proposal-status > h4 {
+	display: inline-block;
+	color: #4D4D4D;
+	margin-right: 5px;
+	position: relative;
+	transform: translate(0,-39px);
+}
+
+div.proposal-section div.status-button {
+	width: 130px;
+	display: inline-block;
+	background-color: #D6D6D6;
+	text-align: center;
+	position: relative;
+	transform: translate(0,-39px);
+}
+
+.selected-status {
+	color: #429DE8;
+}
+
+div.proposal-confirmation {
+	width: 100%;
+}
+
+div.proposal-confirmation div.shift-right {
+	margin-left: 481px;
+}
+
+div.proposal-confirmation button {
+	color: #FFF;
+	padding: 0px 30px;
+	background-color: #4D4D4D;
+	border: none;
+	margin-top: 15px;
+	margin-bottom: 40px;
 }
 
 /* Mobile Optimization */

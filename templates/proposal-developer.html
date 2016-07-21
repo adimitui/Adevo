@@ -1,0 +1,51 @@
+<div class="proposal-section background">
+	<div class="container">
+		<div class="proposal-whole">
+			<div class="proposal-header">
+				<h1>Sent Proposals</h1>
+			</div>
+
+			<div class="proposal-list" ng-repeat="proposal in proposals">
+				<div class="proposal-list-container">
+					<div class="proposal-thumbnail">
+						<img src="{{ proposal.image }}"/>
+					</div>
+
+					<div class="proposal-info">
+						<h2><strong>{{ developer.name }}</strong></h2>
+						<h3>{{ proposal.advertiser_company }}</h3>
+						<h3>{{ proposal.$id }}</h3>
+					</div>
+
+					<div class="proposal-detail">
+						<div class="detail-button active">
+							<h4>Description</h4>
+						</div>
+						<div class="detail-button">
+							<h4>Metrics</h4>
+						</div>
+						<div class="detail-button">
+							<h4>Finance</h4>
+						</div>
+						<div id="description" class="detail-box">
+							<p>{{ proposal.app_description }}</p>
+						</div>
+					</div>
+
+					<div class="proposal-status">
+						<h4>Status:</h4>
+						<div id="in-progress" class="status-button">
+							<h4>In Progress</h4>
+						</div>
+						<div id="approved" class="status-button">
+							<h4>Approved</h4>
+						</div>
+						<div id="declined" class="status-button">
+							<h4>Declined</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

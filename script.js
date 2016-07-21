@@ -41,7 +41,7 @@ app.config(function($routeProvider) {
 
 	$routeProvider.when("/profile", {
 		controller: "ProfileRedirectCtrl",
-		templateUrl: "templates/profile-redirect.html",
+		templateUrl: "templates/redirect.html",
 		resolve: {
 			"currentAuth": function($firebaseAuth) {
 				return $firebaseAuth().$requireSignIn();
@@ -69,10 +69,64 @@ app.config(function($routeProvider) {
 		}
 	})
 
+	$routeProvider.when("/browse", {
+		controller: "BrowseRedirectCtrl",
+		templateUrl: "templates/redirect.html",
+		resolve: {
+			"currentAuth": function($firebaseAuth) {
+				return $firebaseAuth().$requireSignIn();
+			}
+		}
+	})
+
+	$routeProvider.when("/browse/advertisements", {
+		controller: "BrowseAdvertisementsCtrl",
+		templateUrl: "templates/browse-advertisements.html",
+		resolve: {
+			"currentAuth": function($firebaseAuth) {
+				return $firebaseAuth().$requireSignIn();
+			}
+		}
+	})
+
+	$routeProvider.when("/proposals", {
+		controller: "ProposalRedirectCtrl",
+		templateUrl: "templates/redirect.html",
+		resolve: {
+			"currentAuth": function($firebaseAuth) {
+				return $firebaseAuth().$requireSignIn();
+			}
+		}
+	})
+
+	$routeProvider.when("/proposals/developer/:developerUID", {
+		controller: "ProposalDeveloperCtrl",
+		templateUrl: "templates/proposal-developer.html",
+		resolve: {
+			"currentAuth": function($firebaseAuth) {
+				return $firebaseAuth().$requireSignIn();
+			}
+		}
+	})
+
+	$routeProvider.when("/proposals/advertiser/:advertiserUID", {
+		controller: "ProposalAdvertiserCtrl",
+		templateUrl: "templates/proposal-advertiser.html",
+		resolve: {
+			"currentAuth": function($firebaseAuth) {
+				return $firebaseAuth().$requireSignIn();
+			}
+		}
+	})
+
 	$routeProvider.otherwise("/");
 })
 
 app.controller("HeaderCtrl", function($scope, $window, $firebaseAuth, $firebaseObject) {
+	$scope.goToProposals = function() {
+		$window.location.href = "#/proposals";
+	}
+
 	$scope.goToUpload = function() {
 		$scope.authObj = $firebaseAuth();
 		$scope.currentUser = $scope.authObj.$getAuth();
@@ -222,10 +276,14 @@ app.controller("UploadAdvertiserCtrl", function($scope, $firebaseAuth, $firebase
 
 		}, function() {
 			var downloadURL = uploadTask.snapshot.downloadURL;
+			var userRef = firebase.database().ref().child("users").child($scope.currentUser.uid);
+			$scope.currentUserData = $firebaseObject(userRef);
 
 			var advertisementRef = firebase.database().ref().child("advertisements").child($scope.currentUser.uid);
 			$scope.advertisements = $firebaseArray(advertisementRef);
 			$scope.advertisements.$add({
+				advertiser_id: $scope.currentUser.uid,
+				company_name: $scope.currentUserData.company_name,
 				campaign_name: $scope.newCampaignName,
 				campaign_description: $scope.newCampaignDescription,
 				campaign_image: downloadURL,
@@ -351,4 +409,200 @@ app.controller("ProfileDeveloperCtrl", function($scope, $firebaseObject, $routeP
 	$scope.applications.$loaded().then(function() {
 		console.log($scope.applications[0]);
 	});
+});
+
+app.controller("BrowseRedirectCtrl", function($scope, $firebaseAuth, $firebaseObject, $window) {
+	$scope.authObj = $firebaseAuth();
+	$scope.currentUser = $scope.authObj.$getAuth();
+	var ref = firebase.database().ref().child("users").child($scope.currentUser.uid);
+	$scope.currentUserData = $firebaseObject(ref);
+	$scope.currentUserData.$loaded().then(function() {
+		if ($scope.currentUserData.account_type === "Advertiser") {
+			$scope.advertiserUID = $scope.currentUser.uid;
+			$window.location.href = "#/browse/applications";
+		} else if ($scope.currentUserData.account_type === "Developer") {
+			$scope.developerUID = $scope.currentUser.uid;
+			$window.location.href = "#/browse/advertisements";
+		} else {
+			$window.location.href = "#/signup";
+		}
+	})
+});
+
+app.controller("BrowseAdvertisementsCtrl", function($scope, $firebaseArray, $firebaseObject, $firebaseAuth, $window) {
+	$scope.showProposalBox = false;
+
+	var advertiserRef = firebase.database().ref().child("advertisements");
+	$scope.advertisers = $firebaseArray(advertiserRef);
+	$scope.advertisements = [];
+	$scope.advertisers.$loaded().then(function() {
+		angular.forEach($scope.advertisers, function(val, key) {
+			angular.forEach(val, function(val2, key2) {
+				if (key2 !== "$id" && key2 !== "$priority") {
+					$scope.advertisements.push(val2);
+				}
+			})
+		});
+	});
+
+	$scope.draftProposal = function(index) {
+		console.log("Drafting proposal");
+		$scope.showLightbox = true;
+		console.log("Drafted proposal");
+		$scope.proposalCampaign = $scope.advertisements[index];
+	};
+
+	$scope.createProposal = function() {
+		console.log($scope.proposalCampaign);
+
+		$scope.authObj = $firebaseAuth();
+		$scope.currentUser = $scope.authObj.$getAuth();
+		var file = document.getElementById("getFile").files[0];
+		r = new FileReader();
+		console.log(file);
+		r.onloadend = function(event) {
+			var data = event.target.result;
+		}
+		r.readAsBinaryString(file);
+		var storageRef = firebase.storage().ref("proposals/" + $scope.currentUser.uid + "/" + file.name);
+		var uploadTask = storageRef.put(file);
+		uploadTask.on("state_changed", function(snapshot) {
+
+		}, function(error) {
+
+		}, function() {
+			var userRef = firebase.database().ref().child("users").child($scope.currentUser.uid);
+			$scope.currentUserData = $firebaseObject(userRef);
+
+			var downloadURL = uploadTask.snapshot.downloadURL;
+
+			var ref = firebase.database().ref().child("proposals").child($scope.proposalCampaign.advertiser_id);
+			$scope.proposals = $firebaseArray(ref);
+			$scope.proposals.$loaded().then(function() {
+				$scope.proposals.$add({
+					app_name: $scope.appName,
+					developer_name: $scope.currentUserData.first_name + " " + $scope.currentUserData.last_name,
+					developer_company: $scope.currentUserData.company_name,
+					app_description: $scope.appDescription,
+					creator_id: $scope.currentUser.uid,
+					image: downloadURL,
+					status: "pending"
+				});
+				$scope.proposals.$save();
+			});
+
+			ref = firebase.database().ref().child("proposalHistory").child($scope.currentUser.uid);
+			$scope.proposalHistory = $firebaseArray(ref);
+			$scope.proposalHistory.$loaded().then(function() {
+				$scope.proposalHistory.$add({
+					campaign_name: $scope.proposalCampaign.campaign_name,
+					advertiser_company: $scope.proposalCampaign.company_name,
+					app_description: $scope.appDescription,
+					recipient_id: $scope.proposalCampaign.advertiser_id,
+					image: downloadURL,
+					status: "pending"
+				});
+				$scope.proposalHistory.$save();
+			})
+
+			console.log("Proposal request sent");
+			$scope.showLightbox = false;
+		});
+	};
+});
+
+app.controller("ProposalRedirectCtrl", function($scope, $firebaseAuth, $firebaseObject, $window) {
+	$scope.authObj = $firebaseAuth();
+	$scope.currentUser = $scope.authObj.$getAuth();
+	var ref = firebase.database().ref().child("users").child($scope.currentUser.uid);
+	$scope.currentUserData = $firebaseObject(ref);
+	$scope.currentUserData.$loaded().then(function() {
+		console.log($scope.currentUserData.account_type);
+		if ($scope.currentUserData.account_type === "Advertiser") {
+			$scope.advertiserUID = $scope.currentUser.uid;
+			$window.location.href = "#/proposals/advertiser/" + $scope.advertiserUID;
+		} else if ($scope.currentUserData.account_type === "Developer") {
+			$scope.developerUID = $scope.currentUser.uid;
+			$window.location.href = "#/proposals/developer/" + $scope.developerUID;
+		} else {
+			$window.location.href = "#/signup";
+		}
+	})
+});
+
+app.controller("ProposalDeveloperCtrl", function($scope, $routeParams, $firebaseObject, $firebaseArray, $window) {
+	var proposalRef = firebase.database().ref().child("proposalHistory").child($routeParams.developerUID);
+	$scope.proposals = $firebaseArray(proposalRef);
+	$scope.proposals.$loaded().then(function() {
+		for (var i = 0; i < $scope.proposals.length; i++) {
+			console.log($scope.proposals[i].status);
+			if ($scope.proposals[i].status === "pending") {
+				document.getElementById("in-progress").style.backgroundColor = "#429DE8";
+				console.log($scope.getElementById("in-progress"));
+				console.log("Styled");
+			} else if ($scope.proposals[i].status === "approved") {
+				document.getElementById("approved").style.backgroundColor = "#429DE8";
+			} else if ($scope.proposals[i].status === "declined") {
+				document.getElementById("declined").style.backgroundColor = "#429DE8";
+			}
+		}
+	});
+});
+
+app.controller("ProposalAdvertiserCtrl", function($scope, $routeParams, $firebaseObject, $firebaseArray, $window) {
+	var proposalRef = firebase.database().ref().child("proposals").child($routeParams.advertiserUID);
+	$scope.proposals = $firebaseArray(proposalRef);
+	$scope.proposals.$loaded().then(function() {
+		console.log($scope.proposals[0]);
+		console.log(document.getElementById("notification"));
+		for (var i = 0; i < $scope.proposals.length; i++) {
+			console.log($scope.proposals[i].status);
+			if ($scope.proposals[i].status === "pending") {
+				document.getElementById("in-progress").style.backgroundColor = "#429DE8";
+				console.log($scope.getElementById("in-progress"));
+				console.log("Styled");
+			} else if ($scope.proposals[i].status === "approved") {
+				document.getElementById("approved").style.backgroundColor = "#429DE8";
+			} else if ($scope.proposals[i].status === "declined") {
+				document.getElementById("declined").style.backgroundColor = "#429DE8";
+			}
+		}
+	});
+
+	$scope.approveProposal = function(index) {
+		var ref = firebase.database().ref().child("proposals").child($routeParams.advertiserUID).child($scope.proposals[index].$id);
+		ref.update({
+			status: "approved"
+		});
+		var object = $firebaseObject(ref);
+		object.$loaded().then(function() {
+			console.log(object.creator_id);
+			var tempRef = firebase.database().ref().child("proposalHistory").child(object.creator_id);
+			$scope.tempArray = $firebaseArray(tempRef);
+			$scope.tempArray.$loaded().then(function() {
+				ref = firebase.database().ref().child("proposalHistory").child(object.creator_id).child($scope.tempArray[index].$id);
+				ref.update({
+					status: "approved"
+				})
+			});
+		})
+	};
+
+	$scope.declineProposal = function(index) {
+		var ref = firebase.database().ref().child("proposals").child($routeParams.advertiserUID).child($scope.proposals[index].$id);
+		ref.update({
+			status: "declined"
+		});
+		var object = $firebaseObject(ref);
+		object.$loaded().then(function() {
+			var tempRef = firebase.database().ref().child("proposalHistory").child(object.creator_id);
+			$scope.tempArray = $firebaseArray(tempRef);
+			$scope.tempArray.$loaded().then(function() {
+				ref = firebase.database().ref().child("proposalHistory").child(object.creator_id).child($scope.tempArray[index].$id);
+				ref.update({
+					status: "declined"
+				})
+			});
+		})	
+	}
 });

@@ -1,13 +1,13 @@
-<div class="advertiser-profile-section background">
+<div class="profile-section background">
 	<div class="container">
-		<div class="advertiser-box">
-			<div class="advertiser-cover">
-				<div id="cover-photo-div" class="advertiser-cover-photo">
+		<div class="profile-box">
+			<div class="profile-cover">
+				<div id="cover-photo-div" class="profile-cover-photo">
 				</div>
 				<div class="strip">
 				</div>
 				<div class="section-container cover">
-					<div class="advertiser-profile-picture">
+					<div class="profile-picture">
 					</div>
 					<div class="col-md-5">
 						<h3><strong>Company Name:</strong> {{ companyName }}</h3>
@@ -23,21 +23,21 @@
 			</div>
 		</div>
 
-		<div class="advertiser-campaign" ng-repeat="advertisement in advertisements">
+		<div class="profile-list" ng-repeat="advertisement in advertisements">
 			<div class="section-container">
-				<div class="advertiser-campaign-left">
+				<div class="profile-list-left">
 					<h1>{{ advertisement.campaign_name }}</h1>
 					<h4><strong>Campaign Description</strong></h4>
 					<p>{{ advertisement.campaign_description }}</p>
 					<h4><strong>Target Demographics</strong></h4>
 					<p>{{ advertisement.target_demographic }}</p>
 				</div>
-				<div class="advertiser-campaign-right">
+				<div class="profile-list-right">
 					<div class="profile-thumbnail">
 						<img src="{{ advertisement.campaign_image }}"/>
 					</div>
 				</div>
-				<div class="advertiser-campaign-full center">
+				<div class="profile-list-full center">
 					<button ng-click="addBookmark()">Add to Bookmarks</button>
 					<button ng-click="draftProposal()">Draft Proposal</button>
 				</div>
