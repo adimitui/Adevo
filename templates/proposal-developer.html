@@ -1,7 +1,7 @@
-<div class="proposal-section background">
+<div class="proposal-section developer-background">
 	<div class="container">
 		<div class="proposal-whole">
-			<div class="proposal-header">
+			<div class="proposal-header" style="background-color:#ED1C24">
 				<h1>Sent Proposals</h1>
 			</div>
 
@@ -18,7 +18,7 @@
 					</div>
 
 					<div class="proposal-detail">
-						<div class="detail-button active">
+						<div class="detail-button active" style="background-color:#ED1C24">
 							<h4>Description</h4>
 						</div>
 						<div class="detail-button">
@@ -34,13 +34,13 @@
 
 					<div class="proposal-status">
 						<h4>Status:</h4>
-						<div id="in-progress" class="status-button">
+						<div id="in-progress-{{ $index }}" class="status-button">
 							<h4>In Progress</h4>
 						</div>
-						<div id="approved" class="status-button">
+						<div id="approved-{{ $index }}" class="status-button">
 							<h4>Approved</h4>
 						</div>
-						<div id="declined" class="status-button">
+						<div id="declined-{{ $index }}" class="status-button">
 							<h4>Declined</h4>
 						</div>
 					</div>

@@ -59,6 +59,28 @@ body {
 	-o-background-size: cover;
 }
 
+.general-background {
+	background-color: #00AEEF;
+}
+
+.advertiser-background {
+	background: url("http://i346.photobucket.com/albums/p438/adimitui/Advertiser%20Background_zpscrapajas.png");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.developer-background {
+	background: url("http://i346.photobucket.com/albums/p438/adimitui/Developer%20Background_zpsoxgjtixk.png");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
 /* Clearfix */
 .clearfix:after {
 	visibility: hidden;
@@ -110,7 +132,7 @@ div.header h2 {
 }
 
 div.header h2:hover {
-	color: #429DE8;
+	color: #00AEEF;
 	transition: all 0.3s ease;
 }
 
@@ -118,8 +140,35 @@ div.header a, div.header a:hover {
 	text-decoration: none;
 }
 
+div.header div.header-welcome {
+	width: 50%;
+	float: left;
+	text-align: left;
+}
+
+div.header div.header-welcome div.welcome-toggle, div.header div.header-welcome div.welcome-placeholder {
+	width: 100%;
+}
+
+div.header div.welcome-placeholder h2 {
+	font-family: "News Cycle";
+	color: #FFF;
+	text-transform: lowercase;
+}
+
+div.header div.welcome-toggle h4 {
+	font-family: "News Cycle";
+	position: relative;
+	transform: translate(0px,9px);
+}
+
+div.header div.welcome-toggle h5 {
+	font-family: "News Cycle";
+	text-transform: uppercase;
+}
+
 div.header div.header-buttons {
-	width: 90%;
+	width: 40%;
 	float: left;
 	text-align: right;
 	margin-top: 15px;
@@ -157,7 +206,7 @@ div.header button.search-button:hover .glyphicon-search-color {
 }
 
 div.header button.search-button:active .glyphicon-search-color {
-	color: #429DE8;
+	color: #00AEEF;
 }
 
 div.header button {
@@ -179,7 +228,7 @@ div.header button.header-button:hover {
 }
 
 div.header button.header-button:active {
-	background-color: #429DE8;
+	background-color: #00AEEF;
 	transition: all 0.3s ease;
 }
 
@@ -242,7 +291,7 @@ div.header button.header-button img.message {
 }
 
 .hamburger-dropdown-content a:active {
-	background-color: #429DE8;
+	background-color: #00AEEF;
 	color: #FFF;
 }
 
@@ -292,41 +341,88 @@ div.footer-right ul li a {
 
 /* Segment Jumbotron */
 div.segment-jumbotron {
-	background: url("http://i346.photobucket.com/albums/p438/adimitui/Gray%20Background_zpsrcrfh4ri.png");
+	background: url("http://i346.photobucket.com/albums/p438/adimitui/Jumbotron%20002%20Edited_zpsjohugidd.png");
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	margin-top: 70px;
 	background-size: cover;
 	padding-top: 66px;
+	height: 766px;
 	z-index: -100;
 }
 
 div.segment-jumbotron img {
-	width: 330px;
+	width: 240px;
 	height: auto;
-}
-
-div.segment-jumbotron h1 {
-	color: #FFF;
-	font-family: "News Cycle";
-	font-size: 80px;
-	margin-bottom: -10px;
-	text-shadow: 2px 1px 1px rgba(0,0,0,0.5);
-	text-transform: lowercase;
-}
-
-div.segment-subheading {
-	display: inline-block;
-	width: 400px;
+	margin-bottom: 15px;
 }
 
 div.segment-jumbotron h2 {
 	color: #FFF;
-	font-size: 24px;
-	margin-bottom: 50px;
-	text-shadow: 2px 1px 1px rgba(0,0,0,0.5);
 	font-family: "News Cycle";
+	font-size: 22px;
+	text-shadow: 2px 1px 1px rgba(0,0,0,0.5);
+	text-transform: uppercase;
+	position: relative;
+	transform: translate(0,-11px);
+}
+
+div.segment-jumbotron h3 {
+	color: #FFF;
+	font-family: "News Cycle";
+	text-shadow: 2px 1px 1px rgba(0,0,0,0.5);
+	display: block;
+	width: 500px;
+	margin: 0px auto;
+}
+
+div.segment-jumbotron a {
+	width: 170px;
+	border: 3px solid #FFF;
+	display: block;
+	margin: 0px auto;
+	margin-top: 30px;
+	margin-bottom: -20px;
+	height: 50px;
+}
+
+div.segment-jumbotron a:hover, div.segment-jumbotron a.active:hover {
+	text-decoration: none;
+	background-color: #4D4D4D;
+	text-shadow: 2px 1px 1px rgba(0,0,0,0.5);
+	transition: all 0.3s ease;
+}
+
+div.segment-jumbotron a:active {
+	text-decoration: none;
+	background-color: #FFF;
+}
+
+div.segment-jumbotron a.active {
+	text-decoration: none;
+}
+
+div.segment-jumbotron a:active, div.segment-jumbotron a.active:active {
+	transform: scale(0.95,0.95);
+}
+
+div.segment-jumbotron a:active h2, div.segment-jumbotron a.active h2, div.segment-jumbotron a.active:active h2 {
+	color: #00AEEF;
+	text-shadow: none;
+}
+
+div.segment-jumbotron a.active {
+	background-color: #FFF;
+}
+
+div.segment-jumbotron a.active:hover h2 {
+	color: #FFF;
+}
+
+/*div.segment-subheading {
+	display: inline-block;
+	width: 400px;
 }
 
 div.segment-jumbotron button {
@@ -340,7 +436,7 @@ div.segment-jumbotron button {
 }
 
 div.segment-jumbotron button.segment-jumbotron-active {
-	background-color: #429DE8;
+	background-color: #00AEEF;
 }
 
 div.segment-jumbotron h4 {
@@ -354,14 +450,14 @@ div.segment-jumbotron button:hover {
 }
 
 div.segment-jumbotron button:hover h4 {
-	color: #429DE8;
+	color: #00AEEF;
 	transition: all 0.3s ease;
 }
 
 div.segment-jumbotron button:active {
 	transform: scale(0.95,0.95);
 	transition: all 0.3s ease;
-}
+}*/
 
 /* Advertiser or Developer */
 div.segment-question {
@@ -401,7 +497,7 @@ div.segment-question a:hover {
 }
 
 div.advertiser-box {
-	background-color: #429DE8;
+	background-color: #00AEEF;
 }
 
 div.advertiser-box h1, div.developer-box h1 {
@@ -418,7 +514,7 @@ div.advertiser-box:active {
 }
 
 div.advertiser-box:active h1, div.advertiser-box:active h2, div.advertiser-box:active .glyphicon-bullhorn-color {
-	color: #429DE8;
+	color: #00AEEF;
 	text-shadow: none;
 	transition: all 1s ease;
 }
@@ -448,7 +544,11 @@ div.developer-box:active h1, div.developer-box:active h2, div.developer-box:acti
 
 /* Signup & Login Page */
 div.signup-section {
-	background-color: #4D4D4D;
+	background: url("http://i346.photobucket.com/albums/p438/adimitui/Signup%20Background_zpsn9qjoiji.png");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	padding-bottom: 50px;
 	width: 100%;
 	margin-top: 70px;
@@ -456,9 +556,18 @@ div.signup-section {
 
 div.signup-section div.signup-box, div.signup-section div.login-box {
 	background-color: #FFF;
-	border-radius: 20px;
-	padding: 10px 50px 40px 50px;
 	width: 450px;
+	box-shadow: 2px 1px 1px rgba(0,0,0,0.5);
+}
+
+div.signup-section div.signup-header {
+	width: 100%;
+	background-color: #ED1C24;
+}
+
+div.signup-section div.login-header {
+	width: 100%;
+	background-color: #EEBC30;
 }
 
 div.signup-section h1 {
@@ -467,7 +576,24 @@ div.signup-section h1 {
 	text-shadow: 2px 1px 1px rgba(0,0,0,0.5);
 	text-align: center;
 	margin-top: 40px;
+}
+
+div.signup-section div.container > h1 {
+	margin-bottom: -20px;
+	font-size: 50px;
+}
+
+div.signup-header h1, div.login-header h1 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+}
+
+div.signup-section form {
+	margin-left: 50px;
+	margin-right: 50px;
 	margin-bottom: 40px;
+	padding-bottom: 40px;
 }
 
 div.signup-section h2 {
@@ -489,10 +615,12 @@ div.signup-section input {
 
 div.signup-section select {
 	margin-bottom: 10px;
+	width: 100%;
 }
 
 div.signup-section input.checkbox {
-	display: inline-block;
+	display: inline;
+	text-align: left;
 }
 
 div.signup-section label.checkbox-label {
@@ -504,16 +632,75 @@ div.signup-section label.checkbox-label {
 
 div.signup-section button {
 	display: block;
+	margin: 0px auto;
+	width: 120px;
+	height: 50px;
+	background-color: #4D4D4D;
+	border: none;
+}
+
+div.signup-section button h3 {
+	font-family: "News Cycle";
+	position: relative;
+	color: #FFF;
+	transform: translate(0,-50%);
+}
+
+div.signup-section div.signup-box button:hover {
+	background-color: #ED1C24;
+	transition: all 0.3s ease;
+}
+
+div.signup-section div.login-box button:hover {
+	background-color: #EEBC30;
+	transition: all 0.3s ease;
+}
+
+div.signup-section button:active {
+	transform: scale(0.95,0.95);
 }
 
 /* Upload Page (Advertiser) */
 div.upload-section {
 	padding-top: 70px;
 	padding-bottom: 20px;
+	background: url("http://i346.photobucket.com/albums/p438/adimitui/Jumbotron%20002%20Edited%20Simple_zpsl3p2f3uo.png");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: -72px 0px;
+}
+
+div.upload-developer-section {
+	background-position: 14px 0px;
+}
+
+div.upload-box {
+	width: 550px;
+	background-color: #FFF;
+	display: block;
+	margin: 0px auto;
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+	padding-bottom: 20px;
+	margin-top: 20px;
+}
+
+div.upload-box div.upload-header {
+	width: 100%;
+	padding-top: 1px;
+	padding-bottom: 10px;
 }
 
 div.upload-section h1 {
 	font-family: "News Cycle";
+	text-align: center;
+	color: #FFF;
+}
+
+div.upload-section form {
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 div.upload-section h5 {
@@ -528,21 +715,38 @@ div.upload-section h6 {
 div.upload-section input, div.upload-section textarea {
 	display: block;
 	margin-bottom: 20px;
-	width: 400px;
+	width: 100%;
 }
 
 div.upload-section textarea {
 	height: 150px;
 }
 
+div.upload-section button.upload-button {
+	width: 200px;
+	border: none;
+	background-color: #4D4D4D;
+	color: #FFF;
+	display: block;
+	margin: 0px auto;
+}
+
+div.upload-section button.upload-button.advertiser-button:hover {
+	background-color: #EEBC30;
+}
+
+div.upload-section button.upload-button.developer-button:hover {
+	background-color: #ED1C24;
+}
+
+div.upload-section button.upload-button:active {
+	transform: scale(0.95,0.95);
+}
+
 /* Profile Redirect */
 div.redirect-section {
+	background-color: #00AEEF;
 	transform: translate(0,70px);
-	background: url("http://i346.photobucket.com/albums/p438/adimitui/Gray%20Background_zpsrcrfh4ri.png");
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
 	z-index: -100;
 	padding-top: 30px;
 	padding-bottom: 465px;
@@ -619,16 +823,17 @@ div.profile-section div.section-container {
 }
 
 div.profile-section div.profile-list-left {
-	width: 58%;
+	width: 66%;
 	margin-right: 2%;
 	float: left;
 	padding-top: 20px;
 }
 
 div.profile-section div.profile-list-right {
-	width: 40%;
+	width: 32%;
 	float: left;
 	padding-top: 40px;
+	position: relative;
 }
 
 div.profile-section div.profile-list-full {
@@ -645,11 +850,20 @@ div.profile-thumbnail {
 	width: 100px;
 	height: 100px;
 	border: 1px solid #D6D6D6;
+	background-color: #D6D6D6;
+	float: left;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+div.profile-thumbnail:first-child {
+	
 }
 
 div.profile-thumbnail > img {
 	width: 100%;
 	height: 100%;
+	display: inline-block;
 }
 
 div.profile-section div.profile-campaign button {
@@ -680,10 +894,95 @@ div.profile-section div.developer-profile-picture {
 	margin-bottom: -130px;
 }
 
+div.profile-section div.profile-list-left.developer-list-left {
+	width: 68%;
+	padding-right: 10px;
+	margin: 0;
+}
+
+div.profile-section div.profile-list-right.developer-list-right {
+	width: 32%;
+}
+
 /* Browse Advertisements */
 div.browse-section {
 	margin-top: 70px;
+}
+
+div.browse-section .advertiser-button:hover {
+	background-color: #EEBC30;
+}
+
+div.browse-section div.browse-header {
+	width: 100%;
+	background-color: #00AEEF;
+	text-align: center;
+	padding-top: 1px;
+	padding-bottom: 10px;
+}
+
+div.browse-section div.browse-header h1 {
+	font-family: "News Cycle";
+	color: #FFF;
+}
+
+div.browse-section div.browse-list {
+	background-color: #FFF;
+	width: 100%;
+	border-top: 1px solid #D6D6D6;
+	padding-bottom: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.last {
+	margin-bottom: 30px;
+}
+
+div.browse-section div.browse-list-left {
+	width: 70%;
+	padding-right: 10px;
+	padding-left: 15px;
+	float: left;
+}
+
+div.browse-section div.browse-list-right {
+	width: 30%;
+	padding-right: 15px;
+	float: left;
+}
+
+div.browse-section div.browse-list-right h5 {
+	margin-top: 20px;
+}
+
+div.browse-section button {
+	margin-top: 10px;
+	padding: 5px 20px;
+	font-size: 15px;
+	margin-left: 5px;
+	margin-right: 5px;
 	background-color: #4D4D4D;
+	color: #FFF;
+	border: none;
+}
+
+div.browse-section button:hover {
+	background-color: #00AEEF;
+	transition: all 0.3s ease;
+}
+
+div.browse-section button:active {
+	transform: scale(0.95,0.95);
+	transition: all 0.3s ease;
+}
+
+div.browse-section button.advertiser-button:hover {
+	background-color: #EEBC30;
+}
+
+div.browse-section button.developer-button:hover {
+	background-color: #ED1C24;
 }
 
 /* Draft Proposal */
@@ -714,10 +1013,11 @@ div.proposal-box {
 div.proposal-box-container {
 	width: 97%;
 	margin: 0px auto;
+	display: block;
 }
 
 div.proposal-box div.proposal-box-strip {
-	background-color: #429DE8;
+	background-color: #00AEEF;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -749,7 +1049,7 @@ div.proposal-box form > h4:first-child {
 
 div.proposal-box div.proposal-box-file-selector {
 	width: 90%;
-	border: 3px dashed #429DE8;
+	border: 3px dashed #00AEEF;
 	border-radius: 20px;
 	margin: 0px auto;
 	margin-bottom: 20px;
@@ -757,7 +1057,7 @@ div.proposal-box div.proposal-box-file-selector {
 
 div.proposal-box div.proposal-box-file-selector label {
 	display: inline-block;
-	color: #429DE8;
+	color: #00AEEF;
 	position: relative;
 	transform: translate(0,-15px);
 	font-size: 25px;
@@ -768,7 +1068,7 @@ div.proposal-box div.proposal-box-file-selector input#getFile {
 }
 
 .glyphicon-file-color {
-	color: #429DE8;
+	color: #00AEEF;
 	display: inline-block;
 	font-size: 50px;
 	margin-left: 20px;
@@ -777,7 +1077,7 @@ div.proposal-box div.proposal-box-file-selector input#getFile {
 }
 
 div.proposal-box div.proposal-box-file-selector:active {
-	background-color: #429DE8;
+	background-color: #00AEEF;
 	transition: all 0.3s ease;
 }
 
@@ -791,11 +1091,12 @@ div.proposal-box h2 {
 	position: relative;
 	transform: translate(0,0);
 	margin-bottom: 30px;
-	color: #429DE8;
+	color: #00AEEF;
 }
 
-div.proposal-box input {
+div.proposal-box input.app-name {
 	width: 100%;
+
 }
 
 div.proposal-box textarea {
@@ -814,7 +1115,7 @@ div.proposal-box button {
 
 div.proposal-box div.proposal-box-strip-bottom {
 	position: absolute;
-	background-color: #429DE8;
+	background-color: #00AEEF;
 	width: 100%;
 	height: 30px;
 	padding-bottom: 10px;
@@ -835,9 +1136,10 @@ div.proposal-section {
 	margin-top: 70px;
 }
 
-div.proposal-section div.proposal-whole {
+div.proposal-whole {
 	box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
 	background-color: #FFF;
+	width: 100%;
 }
 
 div.proposal-section div.proposal-container {
@@ -846,7 +1148,7 @@ div.proposal-section div.proposal-container {
 
 div.proposal-section div.proposal-header {
 	width: 100%;
-	background-color: #429DE8;
+	background-color: #00AEEF;
 	text-align: center;
 	font-family: "News Cycle";
 	color: #FFF;
@@ -866,6 +1168,11 @@ div.proposal-section div.proposal-list-container {
 	margin-top: 20px;
 }
 
+div.proposal-picture {
+	width: 150px;
+	float: left;
+}
+
 div.proposal-thumbnail {
 	width: 150px;
 	height: 150px;
@@ -876,6 +1183,14 @@ div.proposal-thumbnail {
 div.proposal-thumbnail img {
 	width: 100%;
 	height: 100%;
+	float: left;
+}
+
+div.proposal-picture button {
+	width: 100%;
+	border: none;
+	background-color: #D6D6D6;
+	text-transform: uppercase;
 }
 
 div.proposal-section div.proposal-info {
@@ -911,12 +1226,8 @@ div.proposal-detail div.detail-button h4 {
 	color: #FFF;
 }
 
-div.proposal-detail div.detail-button:hover {
-	background-color: #429DE8;
-}
-
 div.proposal-detail div.detail-button.active {
-	background-color: #429DE8;
+	background-color: #00AEEF;
 }
 
 div.proposal-section div.detail-box {
@@ -955,7 +1266,7 @@ div.proposal-section div.status-button {
 }
 
 .selected-status {
-	color: #429DE8;
+	color: #00AEEF;
 }
 
 div.proposal-confirmation {
@@ -973,6 +1284,13 @@ div.proposal-confirmation button {
 	border: none;
 	margin-top: 15px;
 	margin-bottom: 40px;
+}
+
+div.lightbox > img {
+	margin-top: 100px;
+	max-height: calc(100vh - 130px);
+	width: auto;
+	box-shadow: 2px 1px 1px rgba(0,0,0,0.5);
 }
 
 /* Mobile Optimization */

@@ -1,0 +1,49 @@
+<div class="browse-section advertiser-background">
+	<div class="container">
+		<div class="proposal-whole">
+			<div class="browse-header" style="background-color:#EEBC30">
+				<h1>Mobile Application Profiles</h1>
+			</div>
+
+			<div class="browse-list" ng-repeat="application in applications track by $index">
+				<div class="row">
+					<div class="browse-list-left">
+						<h2><strong>{{ application.application_name }}</strong></h2>
+						<h4><strong>Company Name: </strong>{{ application.developer_company }}</h4>
+						<h4><strong>Developer Name: </strong>{{ application.developer_name }}</h4>
+						<h4 class="last"><strong>Date Posted: </strong></h4>
+						<h5><strong>Application Description</strong></h5>
+						<p>{{ application.application_description }}</p>
+						<h5><strong>Application Metrics</strong></h5>
+						<p>Feature under construction. Coming soon!</p>
+					</div>
+
+					<div class="browse-list-right">
+						<h5><strong>Advertisement Images</strong></h5>
+						<div class="profile-thumbnail">
+							<img src="{{ application.application_image }}"/>
+						</div>
+						<div class="profile-thumbnail">
+						</div>
+						<div class="profile-thumbnail">
+						</div>
+						<div class="profile-thumbnail">
+						</div>
+						<div class="profile-thumbnail">
+						</div>
+						<div class="profile-thumbnail">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="center">
+						<button class="advertiser-button" ng-click="addBookmark()">
+							<h4>Add to Bookmarks</h4>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

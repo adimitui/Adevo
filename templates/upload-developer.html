@@ -1,20 +1,26 @@
-<div class="upload-section">
+<div class="upload-section upload-developer-section">
 	<div class="container">
-		<h1>Create a Mobile Application Profile</h1>
-		<form ng-submit="createProfile()">
-			<h5><strong>Mobile Application Name</strong></h5>
-			<h6>What is the name you are using to identify your project?</h6>
-			<input ng-model="newAppName" type="text"/>
-			<h5><strong>Application Description</strong></h5>
-			<h6>Describe the premise of your mobile application.</h6>
-			<textarea ng-model="newAppDescription"></textarea>
-			<h5><strong>Tags</strong></h5>
-			<h6>List some keywords that describe your application.</h6>
-			<input ng-model="newAppTags"/>
-			<h5><strong>Screenshot Upload</strong></h5>
-			<h6>Upload screenshots of your application. For optimal use, upload a high-definition file with a transparent background that is below 10MB.</h6>
-			<input id="file-selector" type="file" file/>
-			<button type="submit">Create Campaign</button>
-		</form>
+		<div class="upload-box">
+			<div class="upload-header" style="background-color:#ED1C24">
+				<h1>Create a Mobile Application Profile</h1>
+			</div>
+			<form ng-submit="createProfile()">
+				<h5><strong>Mobile Application Name</strong></h5>
+				<h6>What is the name you are using to identify your project?</h6>
+				<input ng-model="newAppName" type="text"/>
+				<h5><strong>Application Description</strong></h5>
+				<h6>Describe the premise of your mobile application.</h6>
+				<textarea ng-model="newAppDescription"></textarea>
+				<h5><strong>Tags</strong></h5>
+				<h6>List some keywords that describe your application.</h6>
+				<input ng-model="newAppTags"/>
+				<h5><strong>Screenshot Upload</strong></h5>
+				<h6>Upload screenshots of your application. For optimal use, upload a high-definition file with a transparent background that is below 10MB.</h6>
+				<input id="file-selector" type="file" file/>
+				<button class="upload-button developer-button" type="submit">
+					<h4>Create Campaign</h4>
+				</button>
+			</form>
+		</div>
 	</div>
 </div>

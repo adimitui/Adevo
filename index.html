@@ -18,6 +18,16 @@
 				</a>
 			</div>
 
+			<div class="header-welcome">
+				<div class="welcome-placeholder" ng-hide="loggedIn">
+					<h2>Adevo</h2>
+				</div>
+				<div class="welcome-toggle" ng-show="loggedIn">
+					<h4>Welcome, {{ user.first_name }} {{ user.last_name }}</h4>
+					<h5>{{ user.account_type }} Account</h5>
+				</div>
+			</div>
+
 			<div class="header-buttons">
 				<form ng-submit="submitSearch()">
 					<input type="text" ng-model="searchValue" placeholder="Search Library"/>
@@ -26,8 +36,8 @@
 					</button>
 				</form>
 
-				<button ng-click="goToProposals()" class="header-button">
-					<img id="notification" class="message" src="http://i346.photobucket.com/albums/p438/adimitui/Message%20White_zps4knryxyg.png"/>
+				<button id="notification" ng-click="goToProposals()" class="header-button">
+					<img class="message" src="http://i346.photobucket.com/albums/p438/adimitui/Message%20White_zps4knryxyg.png"/>
 				</button>
 				<button ng-click="goToUpload()" class="header-button">
 					<img src="http://i346.photobucket.com/albums/p438/adimitui/Upload%20White_zpsfrxcgonr.png"/>
@@ -39,17 +49,12 @@
 					<div class="positioner">
 						<div id="hamburger-dropdown-content-signed-out" class="hamburger-dropdown-content">
 							<a ng-click="hideDropdown()" href="#/about">About Us</a>
-							<a ng-click="hideDropdown()" href="#/browse">Browse Library</a>
-							<a ng-click="hideDropdown()" href="#/contact">Contact Us</a>
-							<a ng-click="hideDropdown()" href="#/terms">Terms &amp; Conditions</a>
 							<a ng-click="hideDropdown()" href="#/signup">Sign Up / Log In</a>
 						</div>
 						<div id="hamburger-dropdown-content-signed-in" class="hamburger-dropdown-content">
 							<a ng-click="hideDropdown()" href="#/profile">Profile</a>
 							<a ng-click="hideDropdown()" href="#/about">About Us</a>
 							<a ng-click="hideDropdown()" href="#/browse">Browse Library</a>
-							<a ng-click="hideDropdown()" href="#/contact">Contact Us</a>
-							<a ng-click="hideDropdown()" href="#/terms">Terms &amp; Conditions</a>
 							<a ng-click="signOut(); hideDropdown()">Sign Out</a>
 						</div>
 					</div>
@@ -94,6 +99,8 @@
   		// Get a reference to the storage service, which is used to create references in your storage bucket
   		var storage = firebase.storage();
 	</script>
+
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 
 	<script src="script.js"></script>
 </body>

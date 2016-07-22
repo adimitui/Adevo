@@ -1,12 +1,16 @@
 <div class="signup-section">
 	<div class="container">
-		<h1>Join the network of Adevo users today!</h1>
+		<div class="center">
+			<h1>Join the network of Adevo users today!</h1>
+		</div>
 
 		<div class="col-md-6 clearfix">
 			<div class="float-right">
 				<div class="signup-box">
+					<div class="signup-header">
+						<h1>Sign Up</h1>
+					</div>
 					<form ng-submit="signUp()">
-						<h2>Sign Up</h2>
 						<label>Username</label>
 						<input type="text" ng-model="newUsername" placeholder="john.doe"/>
 						<label>First Name</label>
@@ -30,7 +34,9 @@
 							<input type="checkbox"/>
 						</div>
 						<label class="checkbox-label">By clicking on the checkbox above, I indicate that I have read and agree with Adevo's <a href="#/terms">Terms &amp; Conditions</a></label>
-						<button type="submit">Sign Up</button>
+						<button type="submit">
+							<h3>Sign Up</h3>
+						</button>
 					</form>
 				</div>
 			</div>
@@ -39,13 +45,17 @@
 		<div class="col-md-6 clearfix">
 			<div class="float-left">
 				<div class="login-box">
+					<div class="login-header">
+						<h1>Log In</h1>
+					</div>
 					<form ng-submit="logIn()">
-						<h2>Log In</h2>
 						<label>Email</label>
 						<input type="text" ng-model="loginEmail" placeholder="janedoe@adevo.com"/>
 						<label>Password</label>
 						<input type="password" ng-model="loginPassword" placeholder="Password"/>
-						<button type="submit">Log In</button>
+						<button type="submit">
+							<h3>Log In</h3>
+						</button>
 					</form>
 				</div>
 			</div>
